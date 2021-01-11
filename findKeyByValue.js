@@ -8,8 +8,6 @@ const findKeyByValue = function(objects,value){
   return;
 }
 
-console.log(findKeyByValue({"sci_fi": "The Expanse", "comedy": "Brooklyn Nine-Nine", "drama":  "The Wire"}, "drama"));
-
-
+module.exports = findKeyByValue;
 
 
