@@ -1,22 +1,5 @@
-const eqArrays = function(arr1, arr2) {
-  if(arr1.length !== arr2.length) { // must check first if the arrays are equal in length
-    return false;
-  }
-  for (var i = 0; i < arr1.length; i++) {
-    const valueOne = arr1[i]
-    const valueTwo = arr2[i]
-  
-    if (valueOne !== valueTwo) {
-      return false 
-    }
-  }
-  return true   
-  }
-
-const assertArraysEqual = function(array1, array2) {
-  if (!eqArrays(array1, array2)) return(console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`));
-  return (console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`));
-}
+const eqArrays = require('./eqArrays')
+const assertArraysEqual = require('./assertArraysEqual');
 
 const words = ["ground", "control", "to", "major", "tom"];
 
@@ -28,9 +11,11 @@ const map = function(array, callback) {
   return results;
 }
 
-const results1 = map(words, word => word[0]);
-console.log(results1);
+module.exports = map;
 
-console.log(assertArraysEqual(map([1,2,3], function(element){return element +1}), [2,3,4]));
-console.log(assertArraysEqual(map([1,2,3], function(element){return element * 3000}), [2,3,4]));
-console.log(assertArraysEqual(map([1,2,3], function(element){return element / 30}), [2,3,4]));
+// const results1 = map(words, word => word[0]);
+// console.log(results1);
+
+// console.log(assertArraysEqual(map([1,2,3], function(element){return element +1}), [2,3,4]));
+// console.log(assertArraysEqual(map([1,2,3], function(element){return element * 3000}), [2,3,4]));
+// console.log(assertArraysEqual(map([1,2,3], function(element){return element / 30}), [2,3,4]));
