@@ -1,4 +1,13 @@
+const assert = require('chai').assert;
 const assertEqual = require('../assertEqual');
 
-assertEqual("this failed:" , "Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
+describe("#assertEqual", () => {
+  it("returns false for 'Lighthouse Labs', 'Bootcamp'", () => {
+    assert.strictEqual(assertEqual('Lighthouse Labs', 'Bootcamp'));
+  });
+});
+
+
+
+
+
